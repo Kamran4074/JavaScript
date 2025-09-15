@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess A Number game</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Guess a Number game</h1>
+        <p class="about">We have selected a random number between 1 and 100 .We'll tell you if your guess was too high or too low.</p>
+
+        <form class="form">
+            <label for="guessfield" id="guess">Guess a Number: </label>
+            <input type="text" id="guessfield"class="guessfield" placeholder="Enter between 1-100" required>
+            <input type="submit" value="Submit Guess" id="submit"class="submit">
+        </form>
+
+        <div id="resultparas">
+            <p>Previous Guess: <span class="guesses"></span></p>
+            <p>Remaining Guess: <span class="remaining">10</span></p>
+            <p class="lowOrHi"></p>
+        </div>
+        <script src="script4.js"></script>
+    </body>
+</html>
