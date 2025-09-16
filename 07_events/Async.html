@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Start/Stop Interval</title>
+</head>
+<body>
+    <h2>Interval Example</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+        let intervalId = null; // to store the interval ID
+
+        // Function to be called repeatedly
+        function sayName() {
+            console.log('Interval running at', new Date().toLocaleTimeString());
+        }
+
+        // Start the interval when the Start button is clicked
+        document.getElementById('start').addEventListener('click', function() {
+            if (!intervalId) { 
+                intervalId = setInterval(sayName, 1000);
+                console.log('Interval started');
+            }
+        });
+
+        // Stop the interval when the Stop button is clicked
+        document.getElementById('stop').addEventListener('click', function() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+                console.log('Interval stopped');
+            }
+        });
+    </script>
+</body>
+</html>
