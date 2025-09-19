@@ -52,3 +52,47 @@ promise4.then(function(user){
     }).finally(function(){
         console.log("This will always Execute");
     })
+
+//way 5 async await
+
+const promise5= new Promise(function(resolve,reject){
+    let err=true;
+    setTimeout(function(){
+        if(!err){
+            resolve('problem solved of Promise5')
+        }
+        else{
+            reject('JS is not working')
+        }
+    },1000)
+})
+async function consumePromise5(){ //async await 
+    try {
+        const response=await promise5;
+        console.log(response);
+    } catch (error) {
+        console.log('Error is: '+error);
+    }
+}
+consumePromise5();
+
+// async function getallusers(){
+//     try {
+//         const url='https://jsonplaceholder.typicode.com/todos'
+//         const response=await fetch(url);
+//         const data= await response.json();
+//         console.log(data);
+//     } catch (error) {
+//         console.log('Error:'+error);
+//     }
+// }
+// getallusers()
+
+fetch('https://jsonplaceholder.typicode.com/todos')
+.then(function(response){
+    return response;
+}).then(function(data){
+    console.log(data);
+}).catch((error)=>{
+    console.log("Error");
+})
